@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<h1> Update in memos </h1>
+
+<form action="#" th:action="@{'/memos/' + ${memo.mno}}" th:object="${memo}" th:method="put">
+    Mno : <input type="text" name="mno" th:field="*{mno}" th:value="*{mno}" readonly/><br>
+    MemoText : <input type="text" name="memoText" th:field="*{memoText}" th:value="*{memoText}"/><br>
+    <input type="submit" value="Update"/><input type="reset" value="Reset"/>
+</form>
+
+</body>
+</html>

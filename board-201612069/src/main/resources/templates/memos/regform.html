@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<h1> Registration in memos </h1>
+
+<!-- th:object에 지정된 객체의 멤버 필드인 경우 *{}를 이용한 접근 ${memo.mno} == *{mno} -->
+<form action="#" th:action="@{'/memos'}" th:object="${memo}" th:method="post">
+    Mno : <input type="text" name="mno" th:field="*{mno}"/><br>
+    MemoText : <input type="text" name="memoText" th:field="*{memoText}"/><br>
+    <input type="submit" value="Register"/><input type="reset" value="Reset"/>
+</form>
+
+</body>
+</html>

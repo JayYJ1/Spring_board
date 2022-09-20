@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<h1> Registration in member </h1>
+
+<!-- @GetMapping 에서 넘겨준 Model의 Attribute: member -->
+<table border="1" width="50%" height="50%" text-align="center">
+    <tr>
+        <td>seq</td>
+        <td>id</td>
+        <td>name</td>
+        <td>email</td>
+        <td>address</td>
+        <td>phone</td>
+        <td>pw</td>
+    </tr>
+        <td><span th:text="${member.seq}"></span></td>
+        <td><span th:text="${member.id}"></span></td>
+        <td><span th:text="${member.name}"></span></td>
+        <td><span th:text="${member.email}"></span></td>
+        <td><span th:text="${member.address}"></span></td>
+        <td><span th:text="${member.phone}"></span></td>
+        <td><span th:text="${member.pw}"></span></td>
+    </tr>
+</table>
+<a th:href="@{'/members'}">list</a>
+<a th:href="@{'/members/' + ${member.seq} + '/upform'}">update</a>
+<a th:href="@{'/members/' + ${member.seq} + '/delform'}">delete</a>
+</body>
+</html>
